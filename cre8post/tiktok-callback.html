@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Cre8Post · Connecting TikTok</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0e110e; color: #e8ece4;
+         font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; text-align: center; padding: 16px; }
+  a { color: #62e33a; }
+  .muted { color: #9aa394; font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1 style="font-size:22px;margin:0 0 8px">Finishing your TikTok connection…</h1>
+  <p class="muted">Handing you back to Cre8Post on your computer.</p>
+  <p class="muted" id="manual" hidden>Nothing happened? Make sure Cre8Post is open, then <a id="go" href="#">click here</a>.</p>
+</main>
+<script>
+  // TikTok sends you here after you approve Cre8Post. Cre8Post runs on your own PC, so this
+  // page passes TikTok's answer straight back to it. Nothing is stored or sent anywhere else.
+  var target = "http://localhost:5050/oauth/tiktok/callback" + window.location.search;
+  document.getElementById("go").href = target;
+  setTimeout(function () { document.getElementById("manual").hidden = false; }, 2500);
+  window.location.replace(target);
+</script>
+</body>
+</html>
