@@ -1,0 +1,10 @@
+// Cloudflare: serves the cre8post.com folder as a plain website at cre8post.com.
+// (The rest of this repo is the GenX CountryBoy site on GitHub Pages, untouched.)
+{
+  "name": "cre8post",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./cre8post.com",
+    "not_found_handling": "404-page"
+  }
+}
